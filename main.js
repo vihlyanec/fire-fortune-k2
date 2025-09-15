@@ -99,6 +99,11 @@
       isGetPrize = true;
       document.body.classList.add("no-spin");
       showPrizePopup("no-spin");
+      // Отключаем обработчики кликов по свечам
+      phoneElems.forEach((el) => {
+        el.style.pointerEvents = "none";
+        el.style.cursor = "default";
+      });
     }
 
     function setSpinsCount() {
@@ -108,6 +113,11 @@
       if (availableSpins <= 0) {
         isGetPrize = true;
         document.body.classList.add("no-spin");
+        // Отключаем обработчики кликов по свечам
+        phoneElems.forEach((el) => {
+          el.style.pointerEvents = "none";
+          el.style.cursor = "default";
+        });
       }
     }
 
