@@ -145,8 +145,13 @@
     // ---------- Попап----------
     function showPrizePopup(index) {
       popupElem.classList.remove("hide");
-      document.querySelector(`.prize-${index == "no-spin" ? index : index + 1}`).classList.remove("hide");
-      console.log(prizes[index]);
+      
+      if (index === "no-spin") {
+        document.querySelector(".prize-no-spin").classList.remove("hide");
+      } else {
+        document.querySelector(`.prize-${index + 1}`).classList.remove("hide");
+        console.log(prizes[index]);
+      }
     }
 
     // ---------- Функции обработчиков событий ----------
